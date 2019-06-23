@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
+import {Link} from 'react-router-dom';
 
 export default function List(props) {
 
   const menuItems = props.menu.map( (value, index) => {
     return (
-      <li key={index}>{value}</li>
+      <li key={index}>
+        <Link to={`/${value}`.toLowerCase()}>{value}</Link>
+      </li>
     );
   });
   return (

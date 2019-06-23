@@ -1,7 +1,13 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import MenuSection from './MenuSection'
 
 export default function Display(props) {
   return (
-    <p>this is the best muthayackin' thing ever.</p>
+    
+      <div className="c-display">
+        <Route exact path="/" component={MenuSection} />
+        <Route exact path="/sharables" component={MenuSection} />
+      </div>
   )
 }

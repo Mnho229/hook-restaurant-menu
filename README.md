@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Purpose
 
-The purpose of this project to get familiar with hooks and react context by simulating a restaurant menu between the chef role and the guest role.
+The purpose of this project to get familiar with hooks, react-router, and react context by simulating a restaurant menu between the chef role and the guest role.
 
 ### `npm start`
 
