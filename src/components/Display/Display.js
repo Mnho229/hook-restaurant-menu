@@ -7,7 +7,8 @@ export default function Display(props) {
     
       <div className="c-display">
         <Route exact path="/" component={MenuSection} />
-        <Route exact path="/sharables" component={MenuSection} />
+        <Route path="/sharables" component={MenuSection} />
+        <Route path="/entrees" component={MenuSection} />
       </div>
   )
 }
