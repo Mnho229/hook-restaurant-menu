@@ -15,18 +15,22 @@ export default function Display(props) {
 
   const [content, setContent] = useState([]);
   useEffect(() => {
-    (async () => {
-      await fetch(`restaurantData/${path}.json`)
+    //No Async since this is not relied on by others.
+    ( () => {
+      fetch(`restaurantData/${path}.json`)
         .then(res => res.json())
         .then(data => {
           setContent(data);
         });
     })();
 
-  }, []);   
+  }, []);
+
+  useEffect(() => {
+    console.log(content);
+  });
 
   function genItem(obj, index) {
-    console.log(obj);
     return (
       <Item key={index} {...obj} />
     )
@@ -40,7 +44,3 @@ export default function Display(props) {
     </div>
   )
 }
-
-//proper css to list on the lefrt
-//Create Entrees
-//

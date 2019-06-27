@@ -1,18 +1,25 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import {Link} from 'react-router-dom';
+import UserContext from '../UserContext';
 
 export default function List(props) {
+  const initialMenu = ['Sharables', 'Entrees', 'Desserts', 'Sides', 'Drinks'];
+  const [menu, setMenu] = useState(initialMenu);
+  const user = useContext(UserContext);
 
-  const menuItems = props.menu.map( (value, index) => {
+  console.log(user);
+
+  const menuItems = menu.map( (value, index) => {
     return (
-      <li key={index}>
-        <Link to={`/${value}`.toLowerCase()}>{value.toUpperCase()}</Link>
-      </li>
+      <Link to={`/${value}`.toLowerCase()} key={index}>
+        <div>{value.toUpperCase()}</div>
+      </Link>
     );
   });
+
   return (
-    <ul className="c-menu">
+    <div className="c-menu">
       {menuItems}
-    </ul>
+    </div>
   )
 }

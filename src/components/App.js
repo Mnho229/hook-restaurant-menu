@@ -3,11 +3,9 @@ import '../dist/css/App.min.css';
 import List from './List';
 import Display from './Display'
 import {BrowserRouter as Router} from 'react-router-dom';
-const UserContext = React.createContext(0);
+import { UserProvider } from './UserContext';
 
 function App() {
-  const initialMenu = ['Sharables', 'Entrees', 'Desserts', 'Sides', 'Drinks'];
-  const [menu, setMenu] = useState(initialMenu);
   const [currentUser, setCurrentUser] = useState(0);
 
   //Based on 0 or 1, change the menu
@@ -24,14 +22,12 @@ function App() {
           Chef
         </div>
       </div>
-      <UserContext.Consumer value={currentUser}>
-        {({ handleChange }) => (
-          <div className="c-main">
-            <List menu={menu} />
-            <Display />
-          </div>
-        )}
-      </UserContext.Consumer>
+      <UserProvider value={currentUser}>
+        <div className="c-main">
+          <List />
+          <Display />
+        </div>
+      </UserProvider>
     </Router>
   );
 }
