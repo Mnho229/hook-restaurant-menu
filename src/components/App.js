@@ -15,7 +15,7 @@ function App() {
       <div className="c-switcher">
         <div className="btn-switch btn--reset"
           onClick={ () => setCurrentUser(0) }>
-          Reset
+          Pleb
         </div>
         <div className="btn-switch btn--chef"
           onClick={ () => setCurrentUser(1) }>

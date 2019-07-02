@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
 
 function Item(props) {
-  const {name, price, desc} = props;
+  const {name, desc} = props;
   return (
     <div className="c-item">
       <h4 className="c-item__name">{name}</h4>
+      <hr />
       <p className="c-item__desc">{desc}</p>
     </div>
   )

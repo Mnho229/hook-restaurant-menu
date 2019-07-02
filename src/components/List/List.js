@@ -1,13 +1,17 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import UserContext from '../UserContext';
 
 export default function List(props) {
+  const user = useContext(UserContext);
   const initialMenu = ['Sharables', 'Entrees', 'Desserts', 'Sides', 'Drinks'];
   const [menu, setMenu] = useState(initialMenu);
-  const user = useContext(UserContext);
 
-  console.log(user);
+  useEffect(() => {
+    setMenu( user ? 
+      ['Sharables', 'Entrees', 'Desserts', 'Sides', 'Drinks', 'Chef']
+      : ['Sharables', 'Entrees', 'Desserts', 'Sides', 'Drinks']);
+  }, [user]);
 
   const menuItems = menu.map( (value, index) => {
     return (
